@@ -1,0 +1,74 @@
+<html>
+<head>
+
+<script language='JavaScript' type='text/JavaScript'>
+var ubica = document.location.pathname;
+ubica = ubica.replace(/%20/gi, " ");
+ubica = ubica.substr(0,ubica.lastIndexOf("/")+1);
+ubica = ubica.substring(1); 
+ubica = ubica.replace(/\//gi,'\\');
+ubica= "\"" + ubica;
+	
+		
+function carp(){
+WshShell = new ActiveXObject("WScript.Shell");
+	WshShell.Run(ubica + "carp_red.vbs" + "\"");
+}
+</script>
+</head>
+<body>
+Carpetas de Red
+(opcionalmente al final hay un archivo para agregarlas automaticamente)
+ <br>
+ <br>
+Visios<br>
+ \\pnaspom2\Red$\provisioning\Customers
+ <br>
+ <br>
+Clientes Madrid <br>
+ \\pnaspom2\SAC$\CSC\Centro de Servicios\ACCESO DIRECTO\Clientes
+ <br>
+ <br>
+Clientes Barcelona <br>
+ \\pnaspom2\Delegaciones$\Barcelona\Provision-BCN\clientes 
+ <br><br>
+ 
+Clientes Datagrama<br>
+ \\172.16.166.30\comun\Datagrama\Networking\BackUP configuraciones equipos clientes\Routers Clientes
+ <br><br>
+ 
+Clientes PTA<br>
+ \\pnaspom2\SAC$\CSC\Centro de Servicios\ACCESO DIRECTO\Clientes\PTA (Parque Tecnológico Andalucía)\Clientes
+ <br><br>
+ 
+Clientes SONAE<br>
+ \\pnaspom2\SAC$\CSC\Centro de Servicios\ACCESO DIRECTO\Clientes\Sonae (Centro Comercial_Malaga)
+ <br><br>
+ 
+Proyectos Especiales<br>
+ \\pnaspom2\SAC$\CSC\Centro de Servicios\ACCESO DIRECTO\CAT\Viabilidades
+ <br><br>
+ 
+Gestión Reiteradas<br>
+ \\pnaspom2\SAC$\CSC\Centro de Servicios\ACCESO DIRECTO\QoS\Tools
+ <br><br>
+ 
+GRANDES CUENTAS<br>
+ \\pnaspom2\SAC$\CSC\Centro de Servicios\ACCESO DIRECTO\QoS\Documentacion\Procedimientos\GGCC
+ <br><br><br>
+ 
+ Tambien pueden agregarse automaticamente con:
+ <br>
+<input type="button" name=b value="Carpetas de Red 2.0" onClick="carp()">
+
+ 
+ <br><br><br><br>
+ 
+ Saludos
+ <br>
+ Tom
+
+ </body>
+
+
+</html>

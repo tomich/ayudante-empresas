@@ -1,0 +1,232 @@
+<html>
+
+<head>
+
+<script language="javascript" src="funciones.js">
+</script>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+.style3 {color: #FF9933}
+.style4 {font-size: 18px; font-weight: bold;}
+-->
+</style>
+</head>
+
+<body onLoad="updateClock(); setInterval('updateClock()', 1000 )" style="BACKGROUND-COLOR: black" background=white link=black alink=white vlink=white>
+<center>
+
+ <FONT color=white STYLE="font-size: 12pt" face="Helvetica"> 
+	
+ 	<fieldset style="width: 100%; height: 100%;">
+	 <center>
+	 <img src="log_jazztel.gif">
+	 
+	 </center>
+	 </fieldset>
+	
+	 <fieldset style="width: 100%; height: 100%;">
+	 <legend><font FONT  STYLE="font-size: 10pt" color=white>Consultas</font></legend>
+	 <center>
+	 <table>
+	 
+     <Form name= frmTssTyD action="" method="Get">
+        <label>      
+            <select name= Test id=Test
+             onchange="Test(this.value)">
+			 <option value="tefs" selected>Elegir Consulta</option>
+			  <option value="tefs">-</option>
+			 <option value="tefs">*Por User PPP</option>
+			  <option value="ppp"><b> --Almacen de Logs</b></option>
+			   <option value="ldap"><b> --LDAP ppp</b></option>
+			   <option value="tefs" >-</option>
+			 <option value="tefs">*Por Nombre Empresa</option>
+			 <option value="sal_nom"><b> --SalesForce</b></option>
+			 <option value="tefs" >-</option>
+			 <option value="tefs">*Por Telefono</option>
+			 <option value="CRM_TEL"><b> --Consulta CRM</b></option>
+			 <option value="appl"><b> --Consulta APPL Bucle</b></option>
+	    <option value="TST_TD2G" ><b> --Test de TD2G</b></option>
+	    <option value="TST_TSS" ><b> --Test de TSS</b></option>
+            <option value="RES"> --Panel Autogestionados</option>
+			 <option value="port_fijo" ><b> --Port@net FIJO</b></option>
+			  <option value="port_movil" ><b> --Port@net MOVIL</b></option>	 <option value="tefs" >-</option>
+			  <option value="tefs">*Por Administrativo</option>
+			<option value="TST_TD2G" ><b> --Test de TD2G 2.0</b></option>
+			  <option value="TST_TSS" ><b> --Test de TSS</b></option>
+			 <option value="tefs" >-</option>
+			 <option value="tefs">*Por Dominio</option>
+			 <option value="ldapdom" ><b> --LDAP Dominio</b></option>
+			 <option value="nslook" ><b> --NSLookup</b></option>
+			 	 <option value="tefs" >-</option>
+<option value="tefs">*Por Direcion IP</option>
+	 <option value="teln" ><b> --Telnet a CPE</b></option>	
+	 		 	 <option value="tefs" >-</option>
+<option value="tefs">*Por Comando Windows</option>
+	 <option value="execu" ><b> --Ejecutar</b></option>	
+			  <option value="tefs" >-</option>
+			 <option value="tefs">*Por CIF</option>
+			  <option value="rtc" ><b> --RTC (incompleto)</b></option>
+			  <option value="reit" ><b> --Reiteradas (incompleto)</b></option>
+			  <option value="ttt_beta" ><b> --CRM (incompleto)</b></option>
+			   <option value="ttt_beta" ><b> --Apolo (incompleto)</b></option>
+			 <option value="tefs" >-</option>
+			
+			 <option value="tefs">*Por User Jazztel</option>
+	 <option value="cat" ><b> --Tecnico y ext.(incompl)</b></option>
+	 
+	    </select>
+		</label>
+		<Label>
+			 
+			 <Input type="text" name="telefono" id="telefono" size="9">
+		</label>
+			<input type="button" name="Testear" id="Testear" onClick="fnTestear()" value="OK">
+			</form>	
+<mascara>
+<form name="masky">
+Mascara: <input name="snm_1" size="1" value="255" class="in" type="text" > 
+<input name="snm_2" size="1" value="255" class="in" type="text"> 
+<input name="snm_3" size="1" value="255" class="in" type="text"> 
+<input name="snm_4" size="1" value="0" class="in" type="text">
+<input value="Calcular Bits" onClick="calcNWbits(this.form)" type="button" style="display:none">
+<input value="Calcular" onClick="calcNWbits(this.form)&calNBFL(ipsi)&mostrarTom('resultip')" type="button" > 
+<input name="result" size="7" readonly="readonly" type="text" style="display:none"> </form>   
+</mascara>
+<form name="ipsi">
+IP de Red:<input name="ip_1" size="1" value="192" class="in" type="text"> 
+<input name="ip_2" size="1" value="168" class="in" type="text"> 
+<input name="ip_3" size="1" value="1" class="in" type="text"> 
+<input name="ip_4" size="1" value="0" class="in" type="text"> 
+<input id=bitmask name="bits" size="1" value="24" class="in" type="text" style="display:none"> 
+
+<input value="Calcular" onClick="calcNWbits(masky)&calNBFL(this.form)&mostrarTom('resultip')" type="button" style="display:none">  
+<input id=borrarip value="Borrar" onClick="resetform4(this.form)&ocultarTom('resultip')&resetform1(masky)" type="button" ></td>
+
+
+
+<FONT STYLE="font-size: 10pt" >
+<a href="ayudaip.html" target="derecha"><font color= white><center>
+>Mas info Calculadora<
+</center></font></a></font>
+
+<font FONT  STYLE="font-size: 10pt" color=white>
+<table id=resultip summary="result" style="display:none" font style="color=white" >
+Resultado:<br>
+<tbody><tr>
+<td>Direcciones usables:</td>
+<td>
+ <input name="numofaddr" size="10" readonly="readonly" type="text"> 
+ <br></td>
+</tr>
+<tr>
+<td>Mascara:</td>
+<td>
+ <input name="snm_1" size="3" readonly="readonly" type="text"> 
+ <input name="snm_2" size="3" readonly="readonly" type="text"> 
+ <input name="snm_3" size="3" readonly="readonly" type="text"> 
+ <input name="snm_4" size="3" readonly="readonly" type="text"></td>
+</tr>
+<tr>
+<td>IP Red:</td>
+<td>
+ <input name="nwadr_1" size="3" readonly="readonly" type="text"> 
+ <input name="nwadr_2" size="3" readonly="readonly" type="text"> 
+ <input name="nwadr_3" size="3" readonly="readonly" type="text"> 
+ <input name="nwadr_4" size="3" readonly="readonly" type="text"></td>
+</tr>
+<tr>
+<td>Puerta de enlace:</td>
+<td>
+ <input name="firstadr_1" size="3" readonly="readonly" type="text"> 
+ <input name="firstadr_2" size="3" readonly="readonly" type="text"> 
+ <input name="firstadr_3" size="3" readonly="readonly" type="text"> 
+ <input name="firstadr_4" size="3" readonly="readonly" type="text"></td>
+</tr>
+<tr>
+<td>Ultima usable:</td>
+<td>
+ <input name="lastadr_1" size="3" readonly="readonly" type="text"> 
+ <input name="lastadr_2" size="3" readonly="readonly" type="text"> 
+ <input name="lastadr_3" size="3" readonly="readonly" type="text"> 
+ <input name="lastadr_4" size="3" readonly="readonly" type="text"></td>
+</tr>
+<tr>
+<td>Broadcast:</td>
+<td>
+ <input name="bcast_1" size="3" readonly="readonly" type="text"> 
+ <input name="bcast_2" size="3" readonly="readonly" type="text"> 
+ <input name="bcast_3" size="3" readonly="readonly" type="text"> 
+ <input name="bcast_4" size="3" readonly="readonly" type="text"></td>
+</tr>
+</tbody>
+</table>
+          </form>
+
+
+
+
+
+</fieldset>
+</P>
+<center>
+
+<fieldset>
+
+<legend><font FONT  STYLE="font-size: 10pt" color=white>Reloj de BREAK</font></legend>
+<div align="center" class="style3"><span class="style4" id="clock">&nbsp;</span></div>
+
+
+<div align="center" class="style3"><span class="style4" id="reloss">&nbsp;</span></div>
+<script type="text/javascript">
+
+var GUI = document.getElementById('reloss');
+var t = 0;
+var i;
+var strseg = '00';
+var strmin = '00';
+var ceg=0;
+
+function draw() {
+if (t<10){
+strseg='0'+t;
+}
+else if (t<60){
+strseg=t;
+}
+else{
+ceg = t-(parseInt(t/60)*60);
+strmin = parseInt(t/60);
+if (ceg<10){
+strseg = '0'+ceg;
+}
+else{
+strseg=ceg;
+}
+}
+	GUI.firstChild.nodeValue = strmin+':'+strseg;}
+draw();
+
+function add() {
+	t++;
+	draw();
+}
+
+function start_clk() {
+	i = setInterval('add()',1000);
+}
+
+function pause_clk() {
+	clearInterval(i);
+}
+
+</script>
+<button onclick="start_clk()">Break</button>
+<button onclick="pause_clk()">Pausa</button>
+	
+</fieldset>
+</center>
+</body>
+</html>

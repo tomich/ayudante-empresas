@@ -1,0 +1,52 @@
+<html>
+
+<head>
+<script language="javascript" src="funciones.js">
+</script>
+
+		<style>
+<!--
+BODY,DIV,TABLE,THEAD,TBODY,TFOOT,TR,TH,TD,P { font-family:"Arial"; font-size:x-small }
+BODY{
+scrollbar-face-color:"#FF9933";
+scrollbar-arrow-color:white;
+scrollbar-track-color:white;
+scrollbar-shadow-color:'';
+scrollbar-highlight-color:'';
+scrollbar-3dlight-color:'';
+scrollbar-darkshadow-Color:'';
+}
+.style1 {color: #FFFFFF}
+-->
+        </style>
+</head>
+<body>
+Buscar en Bing.com
+<br><br>
+<label>      
+            <select name= buscarg id=buscarg>
+			 <option value="str" selected>Web</option>
+			 
+			  <option value="img"><b>Imagenes</b></option>
+			   
+	    </select>
+		</label>
+<Input type="text" name="palabra" id="palabra" size="9">
+		
+			<input type="button" name="Buscar" id="Buscar" onClick="fnBing()" value="Buscar">
+
+			<center><p style="background:lightblue">COMENTARIO</p></center>
+			
+			
+		<br>
+		Muchas veces sucede que debemos buscar algun dato especifico o simplemente tenemos alguna duda en cuanto a la consulta del cliente. Al no tener navegacion libre no podemos buscar en Google , que sería lo mas conveniente, pero si podemos realizar busquedas en Bing.com (el buscador de microsoft). Al hacer esto no podremos entrar , dentro de los resultados obtenidos, a sitios externos a bing.com, pero si podemos cargar la version en cache de la página(la ultima version guardada que microsoft tiene), par ahacer esto(ojo, no se puede con todas) hay que ahcer click, dentro d elos resultados, en "Página en caché" (Puede tardar bastante en cargar y no cargarnos elementos multimedia como imagenes, videos o cualquier elemento dinamico)
+		<br>
+		El caso de las imágenes es similar, solo que no podemos "abrir en cache", pero al menos podremos ver por ejemplo, conectores en diferentes equipos para guiar al cliente en conectar algun IAD o CPE o podremos ver tipos de cable , o cualquier otra utilidad que le encuentren. <br><center><p style="background:red"><font color=white>Recomendacion: NO DESACTIVAR EL FILTRO DE BUSQUEDA DE IMAGENES, CONSECUENCIAS CATASTROFICAS</font></p></center>
+
+
+
+
+
+
+</body>
+</html>

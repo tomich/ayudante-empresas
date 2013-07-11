@@ -1,0 +1,76 @@
+<html>
+<head>
+
+<br>
+</head>
+<body>
+Para realizar distintas acciones como:
+
+<br>
+*Realizar pings a equipos dentro d ela red del cliente
+<br>
+*Realizar pings o traceroutes a sitios externos para comprobar perdida de paquetes
+<br>
+*Otros
+<br>
+<br>
+la forma mas facil de acceder es con el Macro de CAT o con el Script en VBS:
+<FONT FACE="Times New Roman" COLOR="#000000"><A HREF="scripts_tom.html" TARGET="derecha">Scripts Tom</A></FONT>
+<br>
+<br>
+En maquinas con perfil CAT o PYME o Empresa se puede simplemente acceder a "Acceso directo a Router - Passports v1.6-Tecnicos" que deberia encontrarse en el escritorio.
+<br>
+<br>
+En maquinas sin este perfil, realizar lo siguiente:
+<br>
+Abrir consola (inicio-ejecutar-cmd)
+<br>
+escribir el siguiente comando:
+<br>
+telnet 10.0.24.13
+<br>
+<br>
+Los datos de acceso son:
+<br>
+Usuario: soporte
+<br>
+Clave: sop3767
+<br>
+Una vez aqui dentro, podemos realizar ping a todos los CPE/IAD que deseemos. Y acceder por telnet a varios equipos de la misma forma que accedimos a este, es decir, desde esta nueva consola escribimos el comando:
+<br>
+<br>
+telnet IPDELROUTER
+<br>
+usuario
+<br>
+clave
+<br>
+Y listo.. :D
+<br>
+<br>
+<br>
+**¿Para que nos sirve el ping?**
+<br>
+-inicialmente para saber si ese destino existe(si el destino tiene IP o si la IP existe/responde)
+<br>
+-Para saber el IP de un dominio (un ping a www.google.com nos indicara el IP de la pagina por ejemplo)
+<br>
+-Para saber el tiempo de respuesta en milisegundos que tiene ese destino
+<br>
+<br>
+**¿Para que nos sirve acceder por telnet a un CPE/IAD?**
+<br>
+-Para Verificar si el equipo tal vez esta colgado de forma que sincroniza, conecta pero no tiene acceso de ningun tipo.
+<br>
+-Para acceder a un equipo que no permite el acceso web o que tiene el acceso web colgado (por ejemplo en un CPE Comtrend 536+ podemos hacer las mismas tareas que por web)
+<br>
+-Para verificar si el equipo puede "navegar", para hacer esto realizamos telnet al equipo y una vez dentro del destino, hacemos un ping, por ejemplo a Google. Un ejemplo sencillo de este caso seria que el usuario no puede navegar y google.com no responde ping, pero en el CPE si responde, entonces sabemos que no es un error del servicio HASTA el CPE.
+<br>
+-Al punto anterior se suma que algunos CPE's/IAD pueden presentar bloqueos donde sincronizan, navegan, pero tienen navegacion nula o no pueden ingresar a alguna pagina especifica.
+<br>
+-En equipos que tengan un firmware basado en sistemas UNIX(casi todos) podemos acceder al Shell de comandos con el comando "sh" (una vez dentro del equipo) y realizar tareas adicionales, aunque en la mayoria de los quipos jazztel los comandos son los mismos que apenas ingresamos por telnet.
+<br>
+Hay ocaciones donde (si se saben los comandos de unix) podemos verificar si un puerto esta abierto, comprobar la tabla nat en iptables, reiniciar puertos, verificar el % de uso del CPU del equipo ,la memoria RAM libre, un prceso colgado, la transferencia desde alguna interfaz,  etc...  que nos puede servir para diagnosticar algun fallo especifico. 
+
+</body>
+</html>

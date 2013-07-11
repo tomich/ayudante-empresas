@@ -1,0 +1,172 @@
+
+<HTML>
+<head>
+
+<script language="javascript" src="funciones.js">
+</script>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+BODY{
+scrollbar-face-color:"#FF9933";
+scrollbar-arrow-color:black;
+scrollbar-track-color:black;
+scrollbar-shadow-color:'';
+scrollbar-highlight-color:'';
+scrollbar-3dlight-color:'';
+scrollbar-darkshadow-Color:'';
+}
+.style1 {
+	color: #FF9933;
+	font-weight: bold;
+}
+
+.style5 {color: #FFFFFF}
+
+
+
+.style3 {color: #FF9933}
+.style4 {font-size: 18px; font-weight: bold;}
+
+
+-->
+</style>
+</head>
+<BODY bgcolor=white link=black vlink=black alink=brown>
+<center>
+<mascara>
+<form name="masky">
+Mascara: <input name="snm_1" size="1" value="255" class="in" type="text" > 
+<input name="snm_2" size="1" value="255" class="in" type="text"> 
+<input name="snm_3" size="1" value="255" class="in" type="text"> 
+<input name="snm_4" size="1" value="0" class="in" type="text">
+<input value="Calcular Bits" onClick="calcNWbits(this.form)" type="button" style="display:none">
+<input value="Calcular" onClick="calcNWbits(this.form)&calNBFL(ipsi)&mostrarTom('resultip')" type="button" > 
+<input name="result" size="7" readonly="readonly" type="text" style="display:none"> </form>   
+</mascara>
+<form name="ipsi">
+IP de Red:<input name="ip_1" size="1" value="192" class="in" type="text"> 
+<input name="ip_2" size="1" value="168" class="in" type="text"> 
+<input name="ip_3" size="1" value="1" class="in" type="text"> 
+<input name="ip_4" size="1" value="0" class="in" type="text"> 
+<input id=bitmask name="bits" size="1" value="24" class="in" type="text" style="display:none"> 
+
+<input value="Calcular" onClick="calcNWbits(masky)&calNBFL(this.form)&mostrarTom('resultip')" type="button" style="display:none">  
+<input id=borrarip value="Borrar" onClick="resetform4(this.form)&ocultarTom('resultip')&resetform1(masky)" type="button" ></td>
+
+
+<FONT STYLE="font-size: 10pt" >
+<a href="ayudaip.html" target="derecha"><font color= black><center>
+>Mas info Calculadora<
+</center></font></a></font>
+
+<font FONT  STYLE="font-size: 10pt" color=black>
+<table id=resultip summary="result" style="display:none" font style="color=black" >
+Resultado:<br>
+<tbody><tr>
+<td>Direcciones usables:</td>
+<td>
+ <input name="numofaddr" size="10" readonly="readonly" type="text"> 
+ <br></td>
+</tr>
+<tr>
+<td>Mascara:</td>
+<td>
+ <input name="snm_1" size="3" readonly="readonly" type="text"> 
+ <input name="snm_2" size="3" readonly="readonly" type="text"> 
+ <input name="snm_3" size="3" readonly="readonly" type="text"> 
+ <input name="snm_4" size="3" readonly="readonly" type="text"></td>
+</tr>
+<tr>
+<td>IP Red:</td>
+<td>
+ <input name="nwadr_1" size="3" readonly="readonly" type="text"> 
+ <input name="nwadr_2" size="3" readonly="readonly" type="text"> 
+ <input name="nwadr_3" size="3" readonly="readonly" type="text"> 
+ <input name="nwadr_4" size="3" readonly="readonly" type="text"></td>
+</tr>
+<tr>
+<td>Puerta de enlace:</td>
+<td>
+ <input name="firstadr_1" size="3" readonly="readonly" type="text"> 
+ <input name="firstadr_2" size="3" readonly="readonly" type="text"> 
+ <input name="firstadr_3" size="3" readonly="readonly" type="text"> 
+ <input name="firstadr_4" size="3" readonly="readonly" type="text"></td>
+</tr>
+<tr>
+<td>Ultima usable:</td>
+<td>
+ <input name="lastadr_1" size="3" readonly="readonly" type="text"> 
+ <input name="lastadr_2" size="3" readonly="readonly" type="text"> 
+ <input name="lastadr_3" size="3" readonly="readonly" type="text"> 
+ <input name="lastadr_4" size="3" readonly="readonly" type="text"></td>
+</tr>
+<tr>
+<td>Broadcast:</td>
+<td>
+ <input name="bcast_1" size="3" readonly="readonly" type="text"> 
+ <input name="bcast_2" size="3" readonly="readonly" type="text"> 
+ <input name="bcast_3" size="3" readonly="readonly" type="text"> 
+ <input name="bcast_4" size="3" readonly="readonly" type="text"></td>
+</tr>
+</tbody>
+</table>
+          </form>
+
+
+
+
+</P>
+
+</center>
+
+<center>
+<P style="background:lightblue"><font color=lightyellow><A HREF="network_address_calculator_add.html" TARGET="_blank">Calculadora
+completa CLICK ACA----------------</A></font></P></center>
+<font color=black>
+<font color=black >
+<center><P style="background:red">Breve Explicacion:</P></center>
+</font>
+<P>Dentro de una red (incluyendo internet) el numero de IP's es
+limitado por lo que denominamos Mascara de Subred, que simplemente es
+la capacidad en 32bits(como maximo) para asignar direcciones.</P>
+<P>Sin entrar en detalles tecnicos lo basico es lo siguiente:</P>
+<P>En consultas de SVA Datos o configuraciones como el escenario 4 o
+escenario 5, nos puede tocar tener que calcular una direccion IP para
+el cliente y antes de hacer esto debemos entender algunas cosas.</P>
+<P><BR><BR>
+</P>
+<P>La mascara de subred puede estar expresada en una direccion IP
+(como 255.255.255.0) o en bits del 0 al 32 ( como /24, que significa
+24 bits). 
+</P>
+<P><BR><BR>
+</P>
+<P>La mayoria de las direcciones IP hogare&ntilde;as utilizan la
+mascara citada en el ejemplo, que tambien es representada como 24
+bits o como FF-FF-FF-00 en hexadecimal. 
+</P>
+<P>Si no disponemos de la mascara en BITS, podemos usar una de las
+calculadoras que transforma de IP a bits ( y tambien hay otras mas
+que pueden ser de utilidad). 
+</P>
+<center>
+<P style="background:lightblue"><A HREF="network_address_calculator_add.html" TARGET="_blank">Calculadora
+completa  CLICK ACA</A></P>
+</center>
+<P>Sobre los resultados solo vale aclarar algunos datos:</P>
+<P>Direcciones usables: Incluye la puerta de enlace, por lo que para
+ordenadores del cliente quedaran el numero expresado en direcciones usables menos
+una (se resta la que se usa en la puerta de
+enlace).</P>
+<P>Ejemplo: si el ip de la red privada fuera 192.168.1.0 con una
+mascara de 24 bits(255.255.255.0), la puerta de enlace ser&iacute;a
+192.168.1.1, el broadcast seria 192.168.1.255 y el cliente podr&iacute;a
+usar en sus ordenadores desde el 192.168.1.2 hasta el 192.168.1.254</P>
+<P><BR><BR>
+</P>
+</font>
+</BODY>
+</HTML>

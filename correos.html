@@ -1,0 +1,124 @@
+<html>
+<head>
+<script language="javascript">
+
+function procesar(formulario)
+{
+var destino='';
+var empresa=formulario.nom_txt.value;
+var tipodoc=formulario.opciones.options[formulario.opciones.selectedIndex].text;
+var doc=formulario.cif_txt.value;
+var ticket=formulario.tkt_txt.value;
+var estadotkt=formulario.tkt_state.value;
+var motivestadotkt=formulario.tkt_state_mot.value;
+var comentario=formulario.comment.value;
+var contacto=formulario.contac.value;
+var movil=formulario.contac_movi.value;
+var horario=formulario.contac_hora.value;
+
+
+if (formulario.mail_juan.checked) {
+destino = destino +'juaOlmos@op.jazzplat.com.ar; ';
+}
+if (formulario.mail_lucho.checked) {
+destino = destino +'LPereyra@op.jazzplat.com.ar; ';
+}
+if (formulario.mail_hebe.checked) {
+destino = destino +'HMartina@op.jazzplat.com.ar; ';
+}
+if (formulario.mail_otros.checked) {
+destino = destino +formulario.mail_otrostxt.value + '; ';
+}
+
+var asunto='Contacto '+ empresa + ' // ' +tipodoc + ' ' + doc +  ' // ' + ticket ;
+
+
+window.open('mailto:'+destino+'?subject='+asunto+'&body=ID Remedy: '+ ticket + '%0D%0AEstado:'+ estadotkt + '%0D%0AMotivo de Estado:' + motivestadotkt + '%0D%0AContacto:'  + contacto + '%0D%0AMovil Contacto:' + movil + '%0D%0AHorario Contacto:' + horario + '%0D%0AComentario: %0D%0A' + comentario)
+
+
+
+
+
+//alert(asunto);
+
+
+}
+
+
+</script>
+
+</head>
+<body TEXT="#000000" BGCOLOR=lightgray>
+Plantillas Correos(beta)
+<br>
+<br>
+<select name="plantilla">
+<option value="constkt" selected>Consulta Ticket</option>
+<option value="provi">A Provision(no funca)</option>
+<option value="baja">Amenaza de Baja(no funca)</option>
+
+
+</select>
+
+<form name="form1" method="post" action="javascript:procesar(document.forms.form1)">
+<INPUT TYPE=CHECKBOX NAME="mail_juan" checked>Juan Olmos
+
+<INPUT TYPE=CHECKBOX NAME="mail_lucho" checked>Luciano pereyra
+<br>
+<INPUT TYPE=CHECKBOX NAME="mail_hebe">Hebe Martinatto (Backup)
+
+<INPUT TYPE=CHECKBOX NAME="mail_otros">Otros<input type="Textbox" name="mail_otrostxt" value="">
+
+<br>
+<br>
+<label name="label_gral" style="display:block">
+Cliente: <input type="Textbox" name="nom_txt" value="">
+
+<br>
+<select name="opciones">
+<option value="cif" selected>CIF</option>
+<option value="nif">NIF</option>
+<option value="nie">NIE</option>
+<option value="VAT">VAT</option>
+<option value="passport">Pasap.</option>
+
+</select>  <input type="Textbox" name="cif_txt" value="">
+
+
+</label>
+
+<label name="label_tkt" style="display:block">
+ID:<input type="Textbox" name="tkt_txt" value="">
+<br>
+Estado:<input type="Textbox" name="tkt_state" value="">
+<br>
+
+Motivo de Estado:<input type="Textbox" name="tkt_state_mot" value="">
+<br>
+Contacto:<input type="Textbox" name="contac" value="">
+<br>
+Movil:<input type="Textbox" name="contac_movi" value="">
+<br>
+Horario:<input type="Textbox" name="contac_hora" value="">
+
+
+<br>
+Comentario:<br>
+<TEXTAREA NAME="comment" ROWS=3 COLS=30 value="" >
+</TEXTAREA>
+
+
+<input type="submit" name="enviar_btn" value="Enviar Correo" style="display:block">
+
+
+
+<br>
+
+
+</form>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+﻿<!-- saved from url=(0022)http://internet.e-mail -->
+<html>
+<head>
+	<title>Autolog SGO</title>
+<script>
+function $(id){	return document.getElementById(id); }
+function logSGO(){
+	$('usuario').value='036zz044';
+	$('contrasenia').value='jazztel';
+	$('formulario_registro').submit();
+	}
+</script>
+
+</head>
+<body onLoad="logSGO()">
+<form name="formulario_registro" id="formulario_registro" action="https://www.movistar.es/sr/sso/pub/servlet/login" method=post>
+				<input type="hidden" name="xxxmethodxxx" value="POST" />
+				<input name="plantilla" type="hidden" value="onTOAcceso"/>
+				<fieldset>
+					<legend>Autentificación de usuario</legend>
+					
+					<label for="usuario"><span class="texto2_4">Usuario</span></label>
+						<input type="text" name="xxxuserxxx" id="usuario" value="036zz044"/>
+					<br />
+					
+					<label for="contrasenia"><span class="texto2_4">Contraseña</span></label>
+						<input type="password" name="xxxpasswordxxx" id="contrasenia" value="jazztel"/>
+					<br />										
+					
+					<script type="text/javascript" src="/on/io/js/funciones.js"></script>
+					<script type="text/javascript" src="/on/io/js/deteccion_seleccion.js"></script>
+
+					<!-- <label for="direccion"><span class="oculto">Sus servicios</span></label>
+					<select id="direccion" name="direccion">
+						<option value='https://www.movistar.es/on/priv/onTOPaginaPersonal' id='0' name='0'>Área Privada</option>
+						<option value='https://www.movistar.es/on/priv/ServNav?servicio=entrada&entrada=rd_servicios&menu_izq=1&menu_cab_sup=servicios&uri=/on/io/es/servicios/servicios_internet.htm' id='1' name='1'> Sus servicios</option>
+						<option value='https://www.movistar.es/on/priv/ServNav?servicio=entrada&entrada=rd_efactura&menu_cab_sup=E-Factura&menu_izq=1&uri=/id/priv/seg00/jsp/CHF/es/IDAA00SCCHF_1_inicioCHF.jsp' id='2' name='2'> E-factura</option>
+					</select> 	-->
+					<label for="enviar"></label>
+					<input type="Image" name="zzzONenviarNOzzz" id="enviar" src="https://www.movistar.es/on/images/btnSubmit.gif" alt="ir" title="ir" window.onload="return valida_campos(formulario_registro);return false;" onClick="return valida_campos(formulario_registro);return false;"/>	
+					<input type="hidden" name="xxxurixxx" value="https://www.movistar.es/on/priv/onTOPaginaPersonal" />
+				
+				</fieldset>																		
+		
+				
+			</form>	
+</body>
+</html>
+

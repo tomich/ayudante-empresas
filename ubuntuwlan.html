@@ -1,0 +1,38 @@
+<br>Ubuntu WLAN
+
+<br>1.Recordar antes tener habilitado la red inalambrica dando click sobre las dos pantallas no dira si esta habilitado o no. 
+
+<br>2.Clickear en el icono “2 ordenadores” superior derecho del panel  
+<img src="ubuntu1.jpg" vspace=0>
+
+<br>3.Si todo funciona bien veremos las redes por ejemplo eudora.
+<img src="ubuntu2.jpg" vspace=0>
+
+<br>4.Ahora nos pide informacion de la red en esta pantalla (Recordar que WPA con LINUX no va)
+
+<img src="ubuntu3.jpg" vspace=0>
+
+<br>o en esta otra pantalla parecida
+
+<img src="ubuntu4.jpg" vspace=0>
+<br>despues de esto aprecera un icono circular “obtener direccion de red”..........
+luego un icono escalera en azul “se conecto ok”
+
+<img src="ubuntu5.jpg" vspace=0>
+
+<br>para forzar placa de red es facil.
+
+<br>Vete a Sistema \ Administración \ Red. En la ventana que se abre selecciona Conexión cableada (es lo normal si no tienes un módem de los de antes) y pulsa sobre el botón Propiedades que tienes a la derecha.
+
+<br>Escribe, después de desmarcar Habilitar el modo itinerante, la dirección IP de tu equipo, la máscara de subred y la puerta de enlace predeterminada. 
+<br>Activa la pestaña DNS y añade sucesivamente las dos direcciones que corresponden con tu conexión al servidor de Internet. 
+<br>Cierra la ventana con los datos introducidos. 
+<br>NOTA: Si posees una conexión DHCP no tendrás que escribir dichos datos.
+<br>Pero no basta con lo anterior, debes realizar un último paso.
+Vete a Aplicaciones \ Accesorios \ Terminal. 
+<br>Escribe la siguiente instrucción en al línea de comandos y pulsa sobre la tecla <Entrar>:
+sudo /etc/init.d/networking restart 
+Sal del Terminal. 
+
+<br>
+<br><a href="ayuda.html" target="Ayuda">Volver a Inicio</a>

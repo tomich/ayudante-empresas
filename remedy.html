@@ -1,0 +1,669 @@
+
+<HTML>
+<HEAD>
+<script language='JavaScript' type='text/JavaScript'>
+function nslo(){
+n=document.getElementById("domin").value
+var ubica = document.location.pathname;
+ubica = ubica.replace(/%20/gi, " ");
+ubica = ubica.substr(0,ubica.lastIndexOf("/")+1);
+ubica = ubica.substring(1); 
+ubica = ubica.replace(/\//gi,'\\');
+ubica= "\"" + ubica;
+WshShell = new ActiveXObject("WScript.Shell");
+		WshShell.Run(ubica + "nslookup3.vbs " + "\"" +n);
+}
+</script>
+<STYLE>
+	
+		<style>
+<!--
+
+BODY,DIV,TABLE,THEAD,TBODY,TFOOT,TR,TH,TD,P { font-family:"Times New Roman"; font-size:x-small }
+BODY{
+scrollbar-face-color:lightblue;
+scrollbar-arrow-color:white;
+scrollbar-track-color:white;
+scrollbar-shadow-color:'';
+scrollbar-highlight-color:'';
+scrollbar-3dlight-color:'';
+scrollbar-darkshadow-Color:'';
+}
+.style1 {
+	color: #FF9933;
+	font-weight: bold;
+}
+.style3 {color: #FFFFFF; font-weight: bold; }
+.style4 {color: #000000; font-weight: bold; }
+.style5 {color: #FFFFFF}
+-->
+        </style>
+
+
+
+<BODY TEXT="#000000" BGCOLOR=lightgray>
+
+<P class="style4" STYLE="margin-bottom: 0cm"><FONT SIZE=4>PLANTILLAS REMEDY</FONT></P>
+<P STYLE="margin-bottom: 0cm">
+</P>
+<br>
+<TABLE WIDTH=325 BORDER=1 BORDERCOLOR=white CELLPADDING=2 CELLSPACING=0 STYLE="page-break-before: auto; page-break-after: auto; page-break-inside: auto">
+	<COL WIDTH=325>
+	<TR>
+		<TD WIDTH=325 VALIGN=TOP bgcolor="#000000">
+			<center><P class="style3">Datos Obligatorios</P></center>		</TD>
+  </TR>
+	<TR>
+		<TD WIDTH=325 VALIGN=TOP bgcolor="#ff9966">
+		<center>
+		<B><P>
+		  Empresa/Acronimo:<br>
+		 SEDE:<br>
+		  
+
+Síntoma:<br>
+
+Persona de contacto:<br>
+
+Teléfono de contacto:<br>
+
+Horario Contacto:<br>Pruebas Realizadas:<br></P></B></center>
+	  </TD>
+  </TR>
+</TABLE>
+<br>
+
+<TABLE WIDTH=351 BORDER=1 BORDERCOLOR=white CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=147>
+	<COL WIDTH=186>
+	<TR VALIGN=TOP>
+		<TD WIDTH=147 bgcolor="#000000">
+			<P class="style3">VOZ</P>	  </TD>
+<TD WIDTH=186 bgcolor="#000000">
+			<P class="style3">DATOS</P>	  </TD>
+  </TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=147 bgcolor=lightblue>
+		
+			<P ALIGN=LEFT STYLE="margin-bottom: 0cm">
+			
+		Servicio:<br>
+		N&ordm;
+			Cabecera:<br>
+			N&ordm;
+			con problema:<br>
+			Portado:<br>
+			Equipo:<br>
+			Login/pass:<br>
+			Centralita:<br>
+			Mantenimiento:<br>
+			Sincroniza:<br>
+			Nº Administrativo:<br>
+
+Codigo de circuito:<br>
+
+DSLAM:<br>
+
+Slot y puerto :<br>
+
+Miga/Bloque/Par :</P>		</TD>
+		<TD WIDTH=186 bgcolor=lightblue>
+			<P ALIGN=LEFT STYLE="margin-bottom: 0cm">
+
+Servicio DSL:<br>
+
+Modelo de Router:<br>
+
+Login /pwd TELNET:<br>
+
+Login / pwd acceso:<br>
+
+Conectado por:<br>
+
+Ha funcionado con anterioridad:<br>
+
+Sistema Operativo:<br>
+
+Nº de Equipos conectados al router:<br>
+
+Luces del router:<br>
+
+Sincroniza:<br>
+
+Se ha desconectado y conectado el router:<br>
+
+Tiene datafono, alarma...:<br>
+
+Dslam:<br>
+
+Slot y puerto:<br>
+
+Miga/Bloque/Par :<br>
+
+Codigo administrativo:<br>
+
+Codigo de circuito:
+
+		</P>		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=351 BORDER=1 BORDERCOLOR=white CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=166>
+	<COL WIDTH=167>
+	<TR VALIGN=TOP>
+		<TD WIDTH=166 bgcolor="#000000">
+			<P class="style1 style5">INDIRECTO</P>	  </TD>
+<TD WIDTH=167 bgcolor="#000000">
+			<P class="style3">INCOMUNICADO</P>	  </TD>
+  </TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=166 bgcolor=lightblue>
+			<P ALIGN=LEFT STYLE="margin-bottom: 0cm">
+
+Numero A:<br>
+
+Numero B:<br>
+
+Centralita: Marca/Modelo<br>
+
+Extensión:<br>
+
+Tipo de servicio y marcación: ( Si marca o no 1074 para realizar llamadas.<br>
+
+Tipo de llamadas: Metropolitanas, nacionales, móviles. o todas.<br>
+
+Sale la llamada por Telefónica? Marcando el 1077. Si por telefónica no puede la Incidencia y o preguntar por que es muy probable que sea de TESA<br>
+
+</P>		</TD>
+		<TD WIDTH=167 bgcolor=lightblue>
+			<P ALIGN=LEFT STYLE="margin-bottom: 0cm">
+
+Cabecera:<br>
+
+Numeración con problemas: <br>
+
+Portado: <br>
+
+Equipo: <br>
+
+Ip de Gestión:<br>
+
+Login/pass TELNET :<br>
+
+Login y Pass PPP: <br>
+
+Centralita: <br>
+Mantenimiento: <br>
+
+Extensión:<br>
+
+DSLAM/SUB: <br>
+
+Slot y puerto : <br>
+
+Miga/Bloque/Par :<br>
+
+Administrativo:
+
+			</P>		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=350 BORDER=1 BORDERCOLOR=white CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=166>
+	<COL WIDTH=166>
+	<TR VALIGN=TOP>
+		<TD WIDTH=166 bgcolor="#000000">
+			<P class="style1 style5">MASIVA</P>	  </TD>
+<TD WIDTH=166 bgcolor="#000000">
+			<P class="style3">CORREO</P>	  </TD>
+  </TR>
+	<TR VALIGN=TOP bgcolor=lightblue>
+		<TD WIDTH=166>
+			<P ALIGN=LEFT STYLE="margin-bottom: 0cm">
+
+Cabecera:<br>
+
+Numeración con problemas:<br>
+
+Portado:<br>
+
+Servicio:
+<br>
+Equipo:
+<br>
+Ip de Gestión: 
+<br>
+Login/pass de Gestion:
+<br>
+Login/pass de Conexión:
+<br>
+
+DSLAM/SUB: 
+<br>
+Slot y puerto: 
+<br>
+Miga/Bloque/Par:
+<br>
+Administrativo: 
+<br>
+Cod Circuito: 
+
+			
+					</P>		</TD>
+		<TD WIDTH=166>
+			<P ALIGN=LEFT STYLE="margin-bottom: 0cm">
+			Cuenta de correo de origen:<br>
+
+Cuenta de correo de destino:<br>
+
+Le falla a través de webmail:<br>
+
+Le falla a través de un programa de correo / cúal:<br>
+
+Puede enviar correos:<br>
+
+Puede recibir correos:<br>
+
+¿ Qué error le da ? :<br>
+
+
+<br>
+<form>
+Dominio:<Input type="text" name=domin id=domin size="9">
+<input type="button" name=b value=NSLookup onClick="nslo()">
+</form>
+
+			
+			</P>		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=349 BORDER=1 BORDERCOLOR=white CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=168>
+	<COL WIDTH=163>
+	<TR VALIGN=TOP>
+		<TD WIDTH=168 bgcolor="#000000">
+			<P class="style1 style5">I2P</P>	  </TD>
+<TD WIDTH=163 bgcolor="#000000">
+			<P class="style1 style5">ITP</P>	  </TD>
+  </TR>
+	<TR VALIGN=TOP bgcolor=lightblue>
+		<TD WIDTH=168 >
+			<P ALIGN=LEFT STYLE="margin-bottom: 0cm">
+
+VPN:<br>
+
+Equipo( Modelo o fabricante):
+<br>
+Nombre de sede y acceso (letrero de la parte de arriba):
+<br>
+Ip de Gestion :
+<br>
+Login y password :
+<br>
+
+Código administración :
+<br>
+Adsl de acceso :
+<br>
+Modalidad:
+<br>
+Teléfono de Adsl:
+<br>
+Operador:		
+			</P>		</TD>
+		<TD WIDTH=163>
+			<P ALIGN=LEFT STYLE="margin-bottom: 0cm">
+Cabecera:<br>
+Visio:
+<br>
+Centralita:
+<br>
+Router:
+<br>
+Extensión S0: nº de ddi que asocia al router
+<br>
+Velocidad contratada:
+<br>
+Realiza llamadas:
+</P>		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=349 BORDER=1 BORDERCOLOR=white CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=168>
+	<COL WIDTH=163>
+	<TR VALIGN=TOP>
+		<TD WIDTH=168 bgcolor="#000000">
+			<P class="style1 style5">CENTRALITA</P>	  </TD>
+<TD WIDTH=163 bgcolor="#000000">
+			<P class="style1 style5">PRIMARIO FRACCIONAL  </P>	  </TD>
+  </TR>
+	<TR VALIGN=TOP bgcolor=lightblue>
+		<TD WIDTH=168>
+			<P ALIGN=LEFT STYLE="margin-bottom: 0cm"><
+Cabecera:
+<br>
+Centralita: BOSCH // PHILIPS // ERICCSON
+<br>
+Extensión nº: 
+<br>
+Track:
+<br>
+Puede realizar llamadas entre extensiones?:
+</P>		</TD>
+		<TD WIDTH=163>
+			<P ALIGN=LEFT STYLE="margin-bottom: 0cm">
+Cabecera:
+<br>
+Visio:
+<br>
+Numeración con problemas:
+<br>
+Portado: 
+<br>
+Servicio: 1G//2G pot’s o bris
+<br>
+Equipo (Modelo y fabricante):
+<br>
+Estado de los leds de LA: 
+<br>
+Reseteado:si/no 
+<br>
+Ip de Gestión:
+<br>
+Login/pass de Gestion :
+<br>
+Centralita:
+<br>
+Mantenimiento: 
+<br>
+Extensión:
+<br>
+Track: si/no
+<br>
+DSLAM/SUB:
+<br>
+Miga/Bloque/Par :
+<br>
+PVC core :
+<br>
+Administrativo:
+<br>
+User Port:
+<br>
+Len:
+<br>
+Login:
+<br>
+Vóngate:
+<br>
+Cod Circuito:
+
+			
+			</P>		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=350 BORDER=1 BORDERCOLOR=white CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=169>
+	<COL WIDTH=163>
+	<TR VALIGN=TOP>
+		<TD WIDTH=169 bgcolor="#000000">
+			<P class="style1 style5">PRIMARIO  </P>	  </TD>
+<TD WIDTH=163 bgcolor="#000000">
+			<P class="style1 style5">INTERNET DIRECTO (E1 con salida
+			directa a internet) Hasta 2Mb  </P>	  </TD>
+  </TR>
+	<TR VALIGN=TOP bgcolor=lightblue>
+		<TD WIDTH=169>
+			<P ALIGN=LEFT STYLE="margin-bottom: 0cm">
+Cabecera:
+<br>
+Visio:
+<br>
+Numeración con problemas:
+<br>
+Portado: 
+<br>
+Extensión nº: 
+<br>
+Puede realizar llamadas entre extensiones??
+<br>
+Centralita:
+</P>		</TD>
+		<TD WIDTH=163>
+			<P ALIGN=LEFT STYLE="margin-bottom: 0cm">
+Router: 
+<br>
+Estado de los leds:
+<br>
+Visio:
+
+
+
+			</P>		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=350 BORDER=1 BORDERCOLOR=white CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=169>
+	<COL WIDTH=163>
+	<TR VALIGN=TOP>
+		<TD WIDTH=169 bgcolor="#000000">
+			<P class="style1 style5">E1-4U (PTO-PTO) Hasta 2Mb  </P>	  </TD>
+<TD WIDTH=163 bgcolor="#000000">
+			<P class="style1 style5">TRANSETHERNET Desde 10Mb hasta 100Mb  </P>	  </TD>
+  </TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=169 bgcolor=lightblue>
+			<P ALIGN=LEFT STYLE="margin-bottom: 0cm">
+
+Sedes 2 extremos
+<br>
+Extremo 1:
+<br>
+Extremo 2:
+<br>
+Routers:
+<br>
+Estado de los leds: 
+<br>
+Visio:
+</P>		</TD>
+		<TD WIDTH=163 bgcolor=lightblue>
+			<P ALIGN=LEFT STYLE="margin-bottom: 0cm">
+Router: 
+<br>
+Estado de los leds: 
+<br>
+Visio:
+</P>		</TD>
+	</TR>
+</TABLE>
+<hr align="left" size="4" width="370" color="black" />
+<P class="style4" STYLE="page-break-before: always">DATOS
+PARA REMEDY</P>
+<TABLE WIDTH=256 BORDER=1 BORDERCOLOR=white CELLPADDING=2 CELLSPACING=0>
+<COL WIDTH=73>
+	<COL WIDTH=166>
+	<TR>
+		<TD WIDTH=246 COLSPAN=2 VALIGN=TOP bgcolor="#000000">
+			<P class="style1">SEVERIDAD</P>		</TD>
+  </TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=73 bgcolor=lightblue>
+		  <P>Severidad 1</P>
+		</TD>
+  <TD WIDTH=166 bgcolor=lightblue>
+	  <P>Totalmente Incomunicado</P>
+		</TD>
+  </TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=73 bgcolor=lightblue>
+		  <P>Severidad 2</P>
+		</TD>
+  <TD WIDTH=166 bgcolor=lightblue>
+	  <P>Parcialmente Incomunicado</P>
+		</TD>
+  </TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=73 bgcolor=lightblue>
+		  <P>Severidad 3</P>
+		</TD>
+  <TD WIDTH=166 bgcolor=lightblue>
+	  <P>No afectado</P>
+		</TD>
+  </TR>
+</TABLE>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=278 BORDER=1 BORDERCOLOR=white CELLPADDING=2 CELLSPACING=0>
+<COL WIDTH=62>
+	<COL WIDTH=199>
+	<TR>
+		<TD WIDTH=268 COLSPAN=2 VALIGN=TOP bgcolor="#000000">
+			<P class="style1 style5">ASIGNADO A GRUPO</P>	  </TD>
+  </TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=62 bgcolor=lightblue>
+		  <P>CAT G1</P>
+		</TD>
+  <TD WIDTH=199 bgcolor=lightblue>
+	  <P>GG.CC.</P>
+		</TD>
+  </TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=62 bgcolor=lightblue>
+		  <P>CAT G2</P>
+		</TD>
+  <TD WIDTH=199 bgcolor=lightblue>
+	  <P>DATOS / CORREO</P>
+		</TD>
+  </TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=62 bgcolor=lightblue>
+		  <P>CAT G3</P>
+		</TD>
+  <TD WIDTH=199 bgcolor=lightblue>
+	  <P>VOZ Y ACCESO</P>
+		</TD>
+  </TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=62 bgcolor=lightblue>
+		  <P>CAT G4</P>
+		</TD>
+  <TD WIDTH=199 bgcolor=lightblue>
+	  <P>VOZ Y DATOS FRITZBOX</P>
+		</TD>
+  </TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=62 bgcolor=lightblue>
+		  <P>CATSCA</P>
+		</TD>
+  <TD WIDTH=199 bgcolor=lightblue>
+	  <P>ADSL/CORREO Gestion previa</P>
+		</TD>
+  </TR>
+</TABLE>
+<br>
+<TABLE WIDTH=325 BORDER=1 BORDERCOLOR=white CELLPADDING=2 CELLSPACING=0 STYLE="page-break-before: auto; page-break-after: auto; page-break-inside: auto">
+	<COL WIDTH=325>
+	<TR>
+		<TD WIDTH=325 VALIGN=TOP bgcolor="#000000">
+			<P class="style3">PREVIA GGCC</P>		</TD>
+  </TR>
+	<TR>
+		<TD WIDTH=325 VALIGN=TOP bgcolor=lightblue>
+		  <P>Cliente/Acronimo:  <FONT COLOR="#ff0000">SEDE:  </FONT>Sintoma:   Contacto:  Movil
+			contacto:  Horario contacto:</P>
+	  </TD>
+  </TR>
+</TABLE>
+<br>
+<TABLE WIDTH=325 BORDER=1 BORDERCOLOR=white CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=149>
+	<COL WIDTH=159>
+	<TR VALIGN=TOP bgcolor="#000000">
+		<TD WIDTH=149>
+			<P class="style3">MEJORAS/ OBSERVACIONES</P>	  </TD>
+<TD WIDTH=159>
+			<P class="style3">SOLUCION DETALLADA</P>	  </TD>
+  </TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=149 bgcolor=lightblue>
+		<P>#TI# <BR>#ES# <BR>#AC# <BR>#PC# <BR>#FER#			</P>		</TD>
+		<TD WIDTH=159 bgcolor=lightblue>
+			<P>#Ra&iacute;z/es de la incidencia# <BR>#Soluci&oacute;n/es
+			adoptada# <BR>#Motivo de la dilataci&oacute;n, si aplica#
+			<BR>#Seguimiento adicional, si aplica#			</P>		</TD>
+	</TR>
+</TABLE>
+<br>
+<TABLE WIDTH=351  BORDERCOLOR=white BORDER=1 CELLPADDING=2 CELLSPACING=0 STYLE="page-break-before: auto; page-break-after: auto; page-break-inside: auto">
+	<COL WIDTH=133>
+	<COL WIDTH=200>
+	<TR>
+		<TD WIDTH=133 bgcolor="#000000">
+			<P class="style3">REITERADA</P>	  </TD>
+<TD WIDTH=200 bgcolor="#000000">
+			<P class="style3">DESCRIPCION</P>	  </TD>
+  </TR>
+	<TR bgcolor=lightblue>
+		<TD WIDTH=200>
+			<P># REITERADA #NO#<BR># SEDE #0# <BR># SERVICIO #0#<BR>Administrativo:<BR>Sintoma:<BR>INFANCIA<BR>Follow Up<BR>POSVENTA			</P>		</TD>
+		<TD WIDTH=200>
+			<P>Valor Generico para primera incidencia de este tipo en sede</P>		</TD>
+	</TR>
+	<TR bgcolor=lightblue>
+		<TD WIDTH=133>
+			<P>REITERADA #NO#			</P>		</TD>
+		<TD WIDTH=200>
+			<P>(SI O NO) SEG&Uacute;N HAYA O NO TENIDO INCIDENCIA ANTERIOR.			</P>		</TD>
+	</TR>
+	<TR bgcolor=lightblue>
+		<TD WIDTH=133>
+			<P># SEDE #0#			</P>		</TD>
+		<TD WIDTH=200>
+			<P>(CANTIDAD DE INCIDENCIAS QUE SE PRODUJERON EN LA SEDE EN LOS
+			ULTIMOS 30 DIAS)			</P>		</TD>
+	</TR>
+	<TR bgcolor=lightblue>
+		<TD WIDTH=133>
+			<P># SERVICIO #0#			</P>		</TD>
+		<TD WIDTH=200>
+			<P>(CANTIDAD DE INCIDENCIAS QUE SE PRODUJERON SOBRE EL SERVICIO
+			QUE ESTAMOS REPORTANDO&nbsp; EN LOS ULTIMOS 30 DIAS)			</P>		</TD>
+	</TR>
+		<TR bgcolor=lightblue>
+		<TD WIDTH=133>
+			<P>INFANCIA			</P>		</TD>
+		<TD WIDTH=200>
+			<P>Se coloca si la incidencia ocurre dentro de los 5 o 6 dias HABILES luego de activacion, portabilidad	o instalacion		</P>		</TD>
+	</TR>
+			<TR bgcolor=lightblue>
+		<TD WIDTH=133>
+			<P>Follow Up			</P>		</TD>
+		<TD WIDTH=200>
+			<P>Se coloca si la incidencia es muy leve o si se trata de un caso de seguimiento luego de la aparente solucion de una incidencia</P>		</TD>
+	</TR>
+		</TR>
+			<TR bgcolor=lightblue>
+		<TD WIDTH=133>
+			<P>POSVENTA			</P>		</TD>
+		<TD WIDTH=200>
+			<P>Gestiones de Posventa</P>		</TD>
+	</TR>
+</TABLE>
+<br>
+
+</BODY>
+</HTML>

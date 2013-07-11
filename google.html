@@ -1,0 +1,122 @@
+<html>
+Correo
+<br>
+<br>Primero que nada asegurarse que el correo electronico exista y este en status 1 en ldap
+<br>
+<br>Si el correo no es jazztel no hay soporte
+<br>
+<br>Si lo que no le funciona es el gestor de correo que utiliza se le indica como realizarlo una sola vez y se lo redirije a la empresa de software que creo el gestor (ejemplo microsoft para outlook), o alguna pagina de ayuda. (la de jazztel o adslzone.net)
+
+<br>
+<br>el correo no existe
+<br>se crea mediante el panel de control del cliente
+<br>
+<br>recordar que no siempre conincide el nombre de usuario con el de la cuenta de correo esto se verifica en LDAP, esto es el clasico cambiar el arroba por un punto no siempre funciona.
+<br>
+<br>el cliente tiene fallo al enviar o recibir desde el gestor
+cambiar el nombre en el gestor de los servidores smtp y pop por el numero siguiente 62.14.3.192
+<br>Es muy importante hacerle entender al cliente que nosotros brindamos soporte sobre la cuenta y la gestion desde webmail.
+<br>En otras palabras si emite y recibe desde web mail no hay incidencia.
+<br>Verificar que el tamaño de la cuenta no sea sobrepasado por la cantidad de mail recibidos, si esto sucede no podra recibir mas mails.
+
+<br>Si la cuenta esta en status y tiene alguna incidencia verficar que no sea masiva
+<br>Crear otra cuenta probar si funciona.
+<br>si no funciona hacer tikcet
+<br>Si funciona resetear cuenta y probar otra vez, recordar que el nombre no puede ser muy largo.
+<br>
+
+<br><a href="ayuda.html" target="Ayuda">Volver a Inicio</a>
+
+<html>
+
+
+
+<html>
+<head>
+</head>
+<body bgcolor="#ffffff" text="#000099">
+      <br>
+Luciano Pereyra escribi&oacute;:
+      <blockquote
+ cite="mid:13a401ca6c4d$a0d42620$e7d110ac@ar.jazztel.com" type="cite">
+        <meta http-equiv="Content-Type" content="text/html; ">
+        <meta content="MSHTML 6.00.2900.2963" name="GENERATOR">
+        <style></style>
+        <div><font color="#000080" face="Arial" size="2">&nbsp;&nbsp; Gente, les
+envio
+este peque&ntilde;isimo "pseudo manual" respecto a la configuracion de cuentas
+de correo migradas a google en outlook u otros clientes de correo
+electronico, ya que es una consulta que se esta repitiendo bastante y
+cuesta hacerla funcionar ya que la info disponible es poca.</font></div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div><font color="#000080" face="Arial" size="2">&nbsp;&nbsp;
+Inicialmente,
+es
+importante saber que la opcion&nbsp;para utilizar la cuenta como&nbsp;SERVIDOR
+POP esta deshabilitada por defecto en las cuentas de correo GOOGLE. El
+acceso que viene activado de forma predeterminada es el IMAP. Por este
+motivo,
+si
+el cliente quiere configurar el acceso en POP3, primero deberemos
+ingresar via webmail al correo y en el apartado "CONFIGURACION-Reenvio
+y correo POP/IMAP" activarlo. La opcion mas sencilla, seria configurar
+el outlook como correo IMAP, que ya viene activado por defecto.</font></div>
+        <div>&nbsp;</div>
+        <div><font color="#000080" face="Arial" size="2">Los manuales
+para
+Outlook y otros clientes de correo&nbsp;estan en la intra, pero aqui un
+peque&ntilde;o resumen:</font></div>
+        <div>&nbsp;</div>
+        <div><font color="#000080" face="Arial" size="2">Servidor
+entrante:
+IMAP.GMAIL.COM</font></div>
+        <div><font color="#000080" face="Arial" size="2">Servidor
+saliente:
+SMTP.GMAIL.COM</font></div>
+        <div>&nbsp;</div>
+        <div><font color="#000080" face="Arial" size="2">Nombre de
+usuario: <a moz-do-not-send="true"
+ href="mailto:nombre@subdominio.jazztel.es">nombre<font color="#ff0000">@</font>subdominio.jazztel.es</a>&nbsp;(a
+diferencia de
+antes, ahora si va el @, no se reemplaza mas por el ".")</font></div>
+        <div><font color="#000080" face="Arial" size="2">Contrase&ntilde;a:
+definida
+por el cliente</font></div>
+        <div>&nbsp;</div>
+        <div><font color="#000080" face="Arial" size="2">Hay que
+marcar,
+en
+las configuraciones avanzadas, las siguientes opciones para que
+funcione, si no da error:</font></div>
+        <div>&nbsp;</div>
+        <ul>
+          <li><font color="#000080" face="Arial" size="2">Mi servidor
+requiere autenticacion (Misma configuracion que servidor de correo
+entrante)</font></li>
+          <li><font color="#000080" face="Arial" size="2">Correo
+Saliente
+(SMTP): 465 - Marcar la opcion "El servidor requiere una conexion
+segura (SSL)</font></li>
+          <li><font color="#000080" face="Arial" size="2">Correo
+Entrante
+(IMAP): 993 - Marcar la opcion "El servidor requiere una conexion
+segura (SSL)</font></li>
+        </ul>
+        <div>&nbsp;</div>
+        <div><font color="#000080" face="Arial" size="2">Configurandolo
+de
+esta forma, funciona correctamente. Espero que les sirva la informacion.</font></div>
+
+        </div>
+        </div>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
+</body>
+</html>
+
+
+
+

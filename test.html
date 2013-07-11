@@ -1,0 +1,196 @@
+<html>
+
+<head>
+
+<script language="javascript" src="funciones.js">
+</script>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+BODY{
+scrollbar-face-color:"#FF9933";
+scrollbar-arrow-color:white;
+scrollbar-track-color:white;
+scrollbar-shadow-color:'';
+scrollbar-highlight-color:'';
+scrollbar-3dlight-color:'';
+scrollbar-darkshadow-Color:'';
+}
+.style1 {
+	color: #FF9933;
+	font-weight: bold;
+}
+
+.style5 {color: #FFFFFF}
+
+
+
+.style3 {color: #FF9933}
+.style4 {font-size: 18px; font-weight: bold;}
+
+BODY,DIV,TABLE,THEAD,TBODY,TFOOT,TR,TH,TD,P,SELECT,LEGEND { font-family:"Arial"; font-size:x-small }
+
+-->
+</style>
+</head>
+
+<body onLoad="updateClock(); setInterval('updateClock()', 1000 )" style="BACKGROUND-COLOR: black" background=white link=black alink=white vlink=white>
+<center>
+
+ <FONT color=white STYLE="font-size: 12pt" face="Helvetica"> 
+	
+ 	<fieldset style="width: 100%; height: 100%;">
+	 <center>
+	 <img src="jazztel_logo.jpg" width="132" height="49">
+	 <img src="jazzplat_logo.jpg" width="135" height="49">
+	 
+	 </center>
+	 </fieldset>
+	
+	 <fieldset style="width: 100%; height: 100%;">
+	 <legend><font FONT  STYLE="font-size: x-small" color=white>Consultas</font></legend>
+	 <center>
+	 <table>
+	 
+     <Form name= frmTssTyD action="" method="Get">
+        <label>      
+            <select name= Test id=Test
+			
+             onchange="Test(this.value)">
+			 <option value="tefs">Elegir Consulta</option>
+			 
+			
+			   <option value="tefs">-</option>
+			 <option value="tefs">*Por User PPP</option>
+			  <option value="ppp" selected><b> --Almacen de Logs</b></option>
+			   <option value="ldap"><b> --LDAP ppp</b></option>
+			     <option value="tefs">-</option>
+			  <option value="SGO_SGIC"><b> --Iniciar SGO/SGIC</b></option>
+			   <option value="tefs" >-</option>
+			   
+			 <option value="tefs">*Por Nombre Empresa</option>
+			 <option value="sal_nom"><b> --SalesForce</b></option>
+			 <option value="tefs" >-</option>
+			 <option value="tefs">*Por Telefono</option>
+			 <option value="CRM_TEL"><b> --Consulta CRM</b></option>
+			  <option value="CRM_COM"><b> --Comentario CRM</b></option>
+			 <option value="appl"><b> --Consulta APPL Bucle</b></option>
+	    <option value="TYD_TEL"><b> --TyD por Telefono</b></option>
+            <option value="RES"> --Panel Autogestionados</option>
+			 <option value="port_fijo" ><b> --Port@net FIJO</b></option>
+			  <option value="port_movil" ><b> --Port@net MOVIL</b></option>	 <option value="tefs" >-</option>
+			  <option value="tefs">*Por Administrativo</option>
+			
+			  <option value="TYD_TEL" ><b> --TyD por Admin</b></option>
+			  
+			 <option value="tefs" >-</option>
+			 <option value="tefs">*Por Dominio</option>
+			 <option value="ldapdom" ><b> --LDAP Dominio</b></option>
+			 <option value="nslook" ><b> --NSLookup</b></option>
+			 	 <option value="tefs" >-</option>
+<option value="tefs">*Por Direcion IP</option>
+	 <option value="teln" ><b> --Telnet a CPE</b></option>	
+	 		 	 <option value="tefs" >-</option>
+<option value="tefs">*Por Comando Windows</option>
+	 <option value="execu" ><b> --Ejecutar</b></option>	
+			  <option value="tefs" >-</option>
+
+	    </select>
+		</label>
+		<Label>
+			 
+			 <Input type="text" name="telefono" id="telefono" size="9">
+		</label>
+			<input type="button" name="Testear" id="Testear" onClick="fnTestear()" value="OK">
+			
+			</form>	
+
+
+<center>
+
+
+
+<div align="center" class="style3"><span class="style4" id="clock">&nbsp;</span></div>
+
+<table  BORDER=1 BORDERCOLOR=#FF9933 CELLPADDING=4 CELLSPACING=0><tr><td>
+<div align="center" class="style3"><span class="style4" id="reloss">&nbsp;</span></div>
+</td></tr></table>
+
+
+<script type="text/javascript">
+
+var GUI = document.getElementById('reloss');
+var t = 0;
+var i;
+var strseg = '00';
+var strmin = '00';
+var ceg=0;
+
+
+function draw() {
+if (t<10){
+strseg='0'+t;
+}
+else if (t<60){
+strseg=t;
+}
+else{
+ceg = t-(parseInt(t/60)*60);
+strmin = parseInt(t/60);
+if (ceg<10){
+strseg = '0'+ceg;
+}
+else{
+strseg=ceg;
+}
+}
+	GUI.firstChild.nodeValue = strmin+':'+strseg;}
+draw();
+
+function add() {
+	t++;
+	draw();
+}
+
+function start_clk() {
+	i = setInterval('add()',1000);
+}
+
+function pause_clk() {
+	clearInterval(i);
+}
+function pau_pla(){
+if (document.all['bracket1'].value=="Break"){
+start_clk();
+document.all['bracket1'].value="Pausa";
+}
+else{
+pause_clk();
+document.all['bracket1'].value="Break";
+}
+}
+
+function reset_clk(){
+pause_clk();
+t = 0;
+strseg = '00';
+strmin = '00';
+ceg=0;
+document.all['bracket1'].value="Break";
+GUI.firstChild.nodeValue = strmin+':'+strseg;
+
+}
+
+</script>
+<input type="button" name="brack1" id="bracket1" onClick="pau_pla()" value="Break">
+<input type="button" name="brack2" id="bracket2" onClick="reset_clk()" value="Reset">
+
+</fieldset>
+ <FONT color=white STYLE="font-size: 7pt" face="Helvetica">
+Ayudante Jazzplat 2011 por TomCaram<br>Versión 16.5.1
+</font>
+</center>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<html>
+<head>
+<script language='JavaScript' type='text/JavaScript'>
+
+var ubica = document.location.pathname;
+ubica = ubica.replace(/%20/gi, " ");
+ubica = ubica.substr(0,ubica.lastIndexOf("/")+1);
+ubica = ubica.substring(1); 
+ubica = ubica.replace(/\//gi,'\\');
+ubica= "\"" + ubica;
+
+function tel(){
+WshShell = new ActiveXObject("WScript.Shell");
+		WshShell.Run(ubica + "telnet2.vbs" + "\"");
+}
+function nsl(){
+WshShell = new ActiveXObject("WScript.Shell");
+		WshShell.Run(ubica + "nslookup3.vbs" + "\"");
+}
+function exe(){
+WshShell = new ActiveXObject("WScript.Shell");
+		WshShell.Run(ubica + "ejecutar2.vbs" + "\"");
+}
+</script>
+</head>
+<body>
+
+Estos scripts estan tambien disponibles desde la lista desplegable en "Consultas" en el centro del ayudante
+<center>
+<br>
+<br>
+<center><P style="background:lightblue">
+NSLookup:
+</P></center>
+<br>
+Simplemente ingresar dominio y se realizara el NSLookup. Los datos son abiertos inmediatamente y tambien almacenados en C:\NSLookup_logs
+<br>
+<input type="button" name=b value="NSLookup 3.0" onClick="nsl()">
+<br>
+<br>
+<center><P style="background:lightblue">
+Ejecutar:
+</P></center>
+<br>
+Para uso personal. Solo ingresar el comando de windows a ejecutar.
+<br>
+<input type="button" name=b value="Ejecutar 2.1" onClick="exe()">
+
+<br><br>
+<center><P style="background:lightblue">
+Telnet:
+</P></center>
+<br>
+Sirve para ingresar por telnet a CPE's masivo o CPE's sobre linea analogica tradicional. Simplemente ingresar el IP del CPE. Es posible que se obtenga algun error si la clave de acceso telnet es distinta de "admin", pero simplemente colocan la correcta en la ventana de telnet y listo. 
+
+<br>
+
+<input type="button" name=b value="Telnet 2.2" onClick="tel()">
+
+<br><br>
+<center><P style="background:lightblue">
+Carpetas de Red:
+</P></center>
+<br>
+Agrega las carpetas de Red de Empresas a "Mis Sitios de Red". 
+<br>
+<A HREF="carpetasred.html" TARGET="derecha">Mas Info Carpetas de Red</A>
+</center>
+</body>
+</html>

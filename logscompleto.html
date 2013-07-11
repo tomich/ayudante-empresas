@@ -1,0 +1,144 @@
+﻿<header>
+	<LINK REL=STYLESHEET TYPE="text/css" HREF="http://10.0.27.140/jazztel.css" TITLE="Jazztel">
+</header>
+<head>
+<SCRIPT language="javascript">
+function MostrarOcultar (objetoVisualizar) {
+if (document.all[objetoVisualizar].style.display=='none') {
+document.all[objetoVisualizar].style.display='block';
+} else {
+document.all[objetoVisualizar].style.display='none';
+}
+}
+</script>
+</head>
+
+<body bgcolor="orange">
+
+
+<ALMACEN>
+ 
+<div>
+<form name="input" action="http://10.0.27.140/listar_registros_usuarios.php" method="get" target="_blank">
+ 
+ Usuer adsl: <input type="text" name="user" size="8"> <input type="submit" value="Enviar"><br>
+ 
+<SPAN onMouseOver="this.style.color='000000';this.style. cursor='hand'" onMouseOut="this.style.color='000000';this.style.t 
+ 
+extDecoration='none'" 
+onClick="JavaScript:MostrarOcultar('accou');">+Accounting Opciones</SPAN>
+ 
+ 
+ 
+ <table  id=accou style="display:none">
+<tr>
+ 
+Buscar en Accounting: <input type="checkbox" checked name="siacct" value="yes">
+</tr>
+ 
+  <tr><td>&nbsp&nbsp&nbsp&nbsp</td><td><input type="checkbox" checked name="sifecha" 
+ 
+value="yes">fecha</td><td><input type="checkbox" checked name="siUserName" value="yes">UserName</td><td><input type="checkbox" 
+ 
+checked name="siUserRealm" value="yes">UserRealm</td><td><input type="checkbox" checked name="siAcctStatusType" 
+ 
+value="yes">AcctStatusType</td><td><input type="checkbox" checked name="siAcctTerminateCause" 
+ 
+value="yes">AcctTerminateCause</td><td><input type="checkbox" checked name="siFramedIPAddress" 
+ 
+value="yes">FramedIPAddress</td><td><input type="checkbox" checked name="siNASIPAddress" 
+ 
+value="yes">NASIPAddress</td><td><input type="checkbox" checked name="siNASPortId" value="yes">NASPortId</td></tr>
+  <tr><td>&nbsp&nbsp&nbsp&nbsp</td><td><input type="checkbox" checked name="siFrame" 
+ 
+value="yes">Frame</td><td><input type="checkbox" checked name="siSlot" value="yes">Slot</td><td><input type="checkbox" 
+ 
+name="siUndefined" value="yes">Undefined</td><td><input type="checkbox" checked name="siPort" value="yes">Port</td><td><input 
+ 
+type="checkbox" name="siVCC" value="yes">VCC</td><td><input type="checkbox" name="siUpstream" 
+ 
+value="yes">Upstream</td><td><input type="checkbox" name="siDownstream" value="yes">Downstream</td><td><input type="checkbox" 
+ 
+name="siAcctSessionTime" value="yes">AcctSessionTime</td></tr>
+  <tr><td>&nbsp&nbsp&nbsp&nbsp</td><td><input type="checkbox" name="siAcctInputOctets" 
+ 
+value="yes">AcctInputOctets</td><td><input type="checkbox" name="siAcctOutputOctets" 
+ 
+value="yes">AcctOutputOctets</td><td><input type="checkbox" name="siAcctSessionId" value="yes">AcctSessionId</td><td><input 
+ 
+type="checkbox" name="siNASPort" value="yes">NASPort</td><td><input type="checkbox" name="siConnectInfo" 
+ 
+value="yes">ConnectInfo</td><td><input type="checkbox" name="siAcctDelayTime" value="yes">AcctDelayTime</td><td><input 
+ 
+type="checkbox" name="siisakmpgroup" value="yes">isakmpgroup</td><td><input type="checkbox" name="siisakmpinitiatorip" 
+ 
+value="yes">isakmpinitiatorip</td></tr>
+  <tr><td>&nbsp&nbsp&nbsp&nbsp</td><td><input type="checkbox" name="sivrfid" value="yes">vrfid</td><td><input 
+ 
+type="checkbox" name="siconnectprogress" value="yes">connectprogress</td><td><input type="checkbox" name="siCiscoNASPort" 
+ 
+value="yes">CiscoNASPort</td><td><input type="checkbox" name="siCalledStationId" value="yes">CalledStationId</td><td><input 
+ 
+type="checkbox" name="siCallingStationId" value="yes">CallingStationId</td><td><input type="checkbox" checked 
+ 
+name="sidisccauseext" value="yes">disccauseext</td><td><input type="checkbox" name="sinasrxspeed" 
+ 
+value="yes">nasrxspeed</td><td><input type="checkbox" name="sinastxspeed" value="yes">nastxspeed</td></tr>
+ <tr><td>&nbsp&nbsp&nbsp&nbsp</td><td><input type="checkbox" name="siTunnelServerEndpoint" 
+ 
+value="yes">TunnelServerEndpoint</td><td><input type="checkbox" name="siTunnelClientEndpoint" 
+ 
+value="yes">TunnelClientEndpoint</td><td><input type="checkbox" name="siTunnelClientAuthID" 
+ 
+value="yes">TunnelClientAuthID</td><td><input type="checkbox" name="siTunnelServerAuthID" 
+ 
+value="yes">TunnelServerAuthID</td><td><input type="checkbox" name="siXAscendXmitRate" 
+ 
+value="yes">XAscendXmitRate</td><td><input type="checkbox" name="siXAscendDataRate" value="yes">XAscendDataRate</td><td><input 
+ 
+type="checkbox" name="siAcctInputPackets" value="yes">AcctInputPackets</td><td><input type="checkbox" 
+ 
+name="siAcctOutputPackets" value="yes">AcctOutputPackets</td></tr>
+ </table>
+ 
+<br>
+<SPAN onMouseOver="this.style.color='000000';this.style. cursor='hand'" onMouseOut="this.style.color='000000';this.style.t 
+ 
+extDecoration='none'" 
+onClick="JavaScript:MostrarOcultar('autent');">+Autentication Opciones</SPAN>
+ 
+ <table   id=autent style="display:none">
+ 
+
+<tr> Buscar en Autenticacion: <input type="checkbox" checked name="siauth" value="yes"><br>
+ Campos a mostrar de la base de datos de Autenticacion:</tr>
+ 
+  <tr><td>&nbsp&nbsp&nbsp&nbsp</td><td><input type="checkbox" checked name="sifechaf" 
+ 
+value="yes">fecha</td><td><input type="checkbox" checked name="siUserNamef" value="yes">UserName</td><td><input type="checkbox" 
+ 
+checked name="siUserRealmf" value="yes">UserRealm</td><td><input type="checkbox" name="siNASIPAddressf" 
+ 
+value="yes">NASIPAddress</td><td><input type="checkbox" name="siNASPortIdf" value="yes">NASPortId</td><td><input 
+ 
+type="checkbox" name="siFramef" value="yes">Frame</td></tr>
+  <tr><td>&nbsp&nbsp&nbsp&nbsp</td><td><input type="checkbox" name="siSlotf" value="yes">Slot</td><td><input 
+ 
+type="checkbox" name="siUndefinedf" value="yes">Undefined</td><td><input type="checkbox" name="siPortf" 
+ 
+value="yes">Port</td><td><input type="checkbox" name="siVCCf" value="yes">VCC</td><td><input type="checkbox" name="siUpstreamf" 
+ 
+value="yes">Upstream</td><td><input type="checkbox" name="siDownstreamf" value="yes">Downstream</td></tr>
+  <tr><td>&nbsp&nbsp&nbsp&nbsp</td><td><input type="checkbox" checked name="siDescReasonf" 
+ 
+value="yes">DescReason</td><td><input type="checkbox" checked name="siPasswordf" value="yes">Password</td><td><input 
+ 
+type="checkbox" checked name="siOusernamef" value="yes">Ousername</td><td><input type="checkbox" checked name="siInstancef" 
+ 
+value="yes">Instance</td></tr>
+ </table>
+</form>
+ 
+</div>
+</ALMACEN>
+</body>

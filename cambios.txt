@@ -1,0 +1,99 @@
+16.2 "Geminis"
+
+Ahora el path a los scripts se pasa por variable de javascript a Visualbasic script y 
+la carpeta del ayudante puede estar en cualquier lado. 
+Actualizo VDN's
+Arreglo errores de links del ayudante anterior 16.1 "ORION"
+
+
+16.3 "Guanaco"
+
+Actualizo VDN's
+Corrijo errores en links
+Agrego links
+Resalto con otro color los links y VDN's mas usados. 
+Agrego datos de teams ARG
+Elimino Jazztelia
+
+
+16.4 "Cocomiel"
+
+Agrego algunos datos de Fax
+Arreglo algunos errores al abrir links.
+Debido al bloqueo de TyD externo agrego un acceso alternativo a los 
+Test temporal hasta que tenga tiempo de pasar el "bloqueo" en TyD
+Agrego Info de TL's argentina. CCT's Argentina y CCT's España (SyC)
+Pongo Banderitas re tiernas para identificar el origen de los agentes. 
+Agrego algunas descargas y otras giladas.
+Agrego Foto fritz By Marozzi
+
+
+
+16.41 "Cocomiel-41"
+Agrego dejar comunicacion en CRM por telefono a los test. 
+
+
+16.42 "Cocomiel-42"
+Agrego info de cambio de claves en FritzBox
+Saco el apartado FAX de los links y reestructuro todo en "Equipos PYME", 
+donde deberia agregar mucha mas info, pero hasta ahora no pude
+Arreglo algunos links que estaban mal
+Cambio el nombre ADSL en plantillas remedy por DATOS, que se ajusta mas 
+a fallos genericos en datos. 
+
++Renuncio a mi moral y prostituyo los colores del ayudante a gusto del
+grupo en gral. Queda asqueroso pero tiene mayor aceptacion. 
+
+
+16.5.0 "Hernia de disco"
+
+Retiro calculadora IP de pantalla principal. esta donde siempre estuvo, entre los links del medio. 
+Reparo algunos errores de codigo en el javascript de funciones.
+Creo barra superior sobre marco izquierdo para ahora elegir entreplanillas remedy y correos
+Agrego VDN Cobros Pyme
+Creo seccion correos donde pueden enviarse correos automaticamente a destino
+Se deja lo de correos en "WIP - Work In Progress" por limitaciones del protocolo mailto y 
+limitaciones de seguridad en javascript, visualbasicscript para poder formatear el texto 
+directamente(para correos GGCC)
+
+
+16.5.1 "Hernia de disco 2"
++Agrego comentario breve sobre puerto TCP 5060 en FritzBox
++Elimino "Tipificaciones de Remedy en Excel" porque colgaba maxthon
++Ordeno el menu de links de nuevo, elimino trafos porque igual esta adentro de Equipos Pyme.
+
+
+-----------------------------------------------
+WorkInProgress:
+
+Estoy portando un tema de IE7/IE8 al maxthon 1 y 2(porque el 3 ya lo trae) 
+para que se vea igual a IE en caso de que de calidad nos pidan usar solamente
+ese navegador. No lo agrego aun porque no funciona bien
+
+Aun no tuve tiempo de mejorar el acceso externo a TyD. tengo un par de ideas, 
+pero no tengo avail para probarlas. Si a alguien se le ocurre algo chifle
+
+
+Estoy buscando los intentos viejos que tenia de acceso directo a APOLO. uno 
+funcionaba pero con errores. tal vez se pueda depurar. no encuentro la carpeta 
+de proyectos de noviembre
+
+
+Si tengo tiempo, tengo que ver como activar el IPLoopback por telnet en los 
+nuevos CPE's.. algunos clientes no estan conformes con que no puedan usarlo 
+y ya comprobe que si se puede activar. Es una normativa de seguridad moderna 
+tenerlo desactivado pero seria interesante poder activarlo ante solicitud 
+explicita del cliente. 
+
+
+Buscar lugar interno donde subir los EXE RAR y ZIP del ayudante para disminuir 
+el peso
+
+Buscar envio de correos en html o en RTF automatico sin restricciones de seguridad
+(vbs js probablemente mediante ActiveX)
+Armar formulario para correos de GGCC
+
+
+
+
+

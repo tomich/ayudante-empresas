@@ -1,0 +1,371 @@
+
+<html><head><!-- vim:sw=4:ts=4:et: 
+--><title>Calculadora de direccionamiento de Red y de Direcciones IP en javascript</title>
+<script language="javascript" src="funciones.js"></script>
+
+<style type="text/css">
+<!--
+input.in {  background-color:#ddffd3; }
+p.copy { margin-top: 8pt; 
+        border-top: 1px solid #bbb;
+        font-family: arial,Helvetica,sans-serif;
+        font-weight: normal;
+        width: 90%;
+        font-size: 80%;
+        color: #888;
+}
+-->
+</style>
+    
+    
+
+</head><body bgcolor=lightyellow>
+
+
+<br>
+
+    <center>
+      <h1>Calculadora de IP y Red</h1>
+    </center>
+
+
+Mostrar red, broadcast, primera y ultima direccion para una red dada:<br><br>
+          <form>
+IP/bits: <input name="ip_1" size="3" value="192" class="in" type="text"> 
+<input name="ip_2" size="3" value="168" class="in" type="text"> 
+<input name="ip_3" size="3" value="1" class="in" type="text"> 
+<input name="ip_4" size="3" value="0" class="in" type="text"> 
+<b>/ </b><input name="bits" size="2" value="24" class="in" type="text"> 
+
+<input value=" calcular " onclick="calNBFL(this.form)" type="button">  
+<input value=" borrar " onclick="resetform4(this.form)" type="button">
+<br><br>Resultado: <br><br>
+<table summary="result">
+<tbody><tr>
+<td>Direcciones usables:</td>
+<td>
+ <input name="numofaddr" size="10" readonly="readonly" type="text"> 
+ <br>
+</td>
+</tr>
+<tr>
+<td>Mascara:</td>
+<td>
+ <input name="snm_1" size="3" readonly="readonly" type="text"> 
+ <input name="snm_2" size="3" readonly="readonly" type="text"> 
+ <input name="snm_3" size="3" readonly="readonly" type="text"> 
+ <input name="snm_4" size="3" readonly="readonly" type="text"> 
+ <br>
+</td>
+</tr>
+<tr>
+<td>IP Red:</td>
+<td>
+ <input name="nwadr_1" size="3" readonly="readonly" type="text"> 
+ <input name="nwadr_2" size="3" readonly="readonly" type="text"> 
+ <input name="nwadr_3" size="3" readonly="readonly" type="text"> 
+ <input name="nwadr_4" size="3" readonly="readonly" type="text"> 
+ <br>
+</td>
+</tr>
+<tr>
+<td>Puerta de enlace:</td>
+<td>
+ <input name="firstadr_1" size="3" readonly="readonly" type="text"> 
+ <input name="firstadr_2" size="3" readonly="readonly" type="text"> 
+ <input name="firstadr_3" size="3" readonly="readonly" type="text"> 
+ <input name="firstadr_4" size="3" readonly="readonly" type="text"> 
+ <br>
+</td>
+</tr>
+<tr>
+<td>Ultima usable:</td>
+<td>
+ <input name="lastadr_1" size="3" readonly="readonly" type="text"> 
+ <input name="lastadr_2" size="3" readonly="readonly" type="text"> 
+ <input name="lastadr_3" size="3" readonly="readonly" type="text"> 
+ <input name="lastadr_4" size="3" readonly="readonly" type="text"> 
+ <br>
+</td>
+</tr>
+<tr>
+<td>Broadcast:</td>
+<td>
+ <input name="bcast_1" size="3" readonly="readonly" type="text"> 
+ <input name="bcast_2" size="3" readonly="readonly" type="text"> 
+ <input name="bcast_3" size="3" readonly="readonly" type="text"> 
+ <input name="bcast_4" size="3" readonly="readonly" type="text"> 
+</td>
+</tr>
+</tbody></table>
+          </form>
+<br>
+La mascara de subred en "formato bits" tambien es conocida como Mascara en formato CIDR (CIDR= Classless inter-domain Routing). A la Mascara en formato IP se el conoce tambien como "formato decimal con punto".
+
+    <center>
+      <h1>Conversores para direcciones IP y de Red</h1>
+    </center>
+
+<h3>Convertidor de mascara de subred (IP en decimales a formato BITS)</h3>
+          <form>
+<input name="snm_1" size="3" value="255" class="in" type="text"> 
+<input name="snm_2" size="3" value="255" class="in" type="text"> 
+<input name="snm_3" size="3" value="255" class="in" type="text"> 
+<input name="snm_4" size="3" value="0" class="in" type="text"> resultado:
+/<input name="result" size="7" readonly="readonly" type="text">
+<input value=" calcular " onclick="calcNWbits(this.form)" type="button">  
+<input value=" reset " onclick="resetform1(this.form)" type="button">
+          </form>
+<br><hr>
+
+<h3>Convertidor de mascara de subred (Formato BITS a IP en decimales)</h3>
+          <form>
+/<input name="bits" size="4" value="24" class="in" type="text"> 
+<input value=" calcular " onclick="calcNWmaskForm2(this.form)" type="button">  
+<input value=" reset " onclick="resetform2(this.form)" type="button">
+<br>
+<br>resultado: 
+<br>Dec:
+<input name="snm_1" size="3" readonly="readonly" type="text"> 
+<input name="snm_2" size="3" readonly="readonly" type="text"> 
+<input name="snm_3" size="3" readonly="readonly" type="text"> 
+<input name="snm_4" size="3" readonly="readonly" type="text"> 
+<br>Hex:
+<input name="hex_1" size="2" readonly="readonly" type="text"> 
+<input name="hex_2" size="2" readonly="readonly" type="text"> 
+<input name="hex_3" size="2" readonly="readonly" type="text"> 
+<input name="hex_4" size="2" readonly="readonly" type="text"> 
+          </form>
+<br><hr>
+<h3>Numero de direcciones requeridas a mascara de subred</h3>
+          <form>
+Direcciones(ordenadores) requeridas:
+<input name="numofaddr" size="4" value="5" class="in" type="text"> 
+<input value=" calcular " onclick="calcNeeded(this.form)" type="button">  
+<input value=" reset " onclick="resetform6(this.form)" type="button">
+<br>
+<br>resultado: <br>
+<br>
+mascara: 
+/<input name="bits" size="4" readonly="readonly" type="text"> 
+Mascara en dec. con punto:
+<input name="snm_1" size="3" readonly="readonly" type="text"> 
+<input name="snm_2" size="3" readonly="readonly" type="text"> 
+<input name="snm_3" size="3" readonly="readonly" type="text"> 
+<input name="snm_4" size="3" readonly="readonly" type="text"> <br>
+Direcciones usables: <input name="maxaddr" size="10" readonly="readonly" type="text"> 
+          </form>
+<br><hr>
+
+<h3>Convertir Mascara IP Decimal con punto o en bits a binario y hexadecimal</h3>
+          <form>
+<input name="ip_1" size="3" value="10" class="in" type="text"> 
+<input name="ip_2" size="3" value="0" class="in" type="text"> 
+<input name="ip_3" size="3" value="0" class="in" type="text"> 
+<input name="ip_4" size="3" value="255" class="in" type="text"> 
+<input value=" calcular " onclick="calcBinBits(this.form)" type="button">  
+<input value=" reset " onclick="resetform3(this.form)" type="button">
+<br>
+<br>
+resultado: 
+<br>
+<br>Bin:
+<input name="bits_1" size="8" readonly="readonly" type="text"> 
+<input name="bits_2" size="8" readonly="readonly" type="text"> 
+<input name="bits_3" size="8" readonly="readonly" type="text"> 
+<input name="bits_4" size="8" readonly="readonly" type="text"> 
+<br>Hex:
+<input name="hex_1" size="2" readonly="readonly" type="text"> 
+<input name="hex_2" size="2" readonly="readonly" type="text"> 
+<input name="hex_3" size="2" readonly="readonly" type="text"> 
+<input name="hex_4" size="2" readonly="readonly" type="text"> 
+          </form>
+<br><hr>
+
+<h3>Convertir mascara Hexadecimal a Decimal con punto y binario</h3>
+          <form>
+<input name="hex" size="10" value="" class="in" type="text"> 
+<input value=" calcular " onclick="dot2hex(this.form)" type="button">  
+<input value=" reset " onclick="resetform12(this.form)" type="button">
+<br>
+<br>
+resultado: 
+<br>
+<br>Decimal con punto:
+<input name="ip_1" size="3" readonly="readonly" type="text"> 
+<input name="ip_2" size="3" readonly="readonly" type="text"> 
+<input name="ip_3" size="3" readonly="readonly" type="text"> 
+<input name="ip_4" size="3" readonly="readonly" type="text"> 
+<br>Bin:
+<input name="bits_1" size="8" readonly="readonly" type="text"> 
+<input name="bits_2" size="8" readonly="readonly" type="text"> 
+<input name="bits_3" size="8" readonly="readonly" type="text"> 
+<input name="bits_4" size="8" readonly="readonly" type="text"> 
+          </form>
+<br><hr>
+
+
+<h3>Calcular el Complemento BIT de una direccion IP (inverso)</h3>
+          <form>
+<input name="ip_1" size="3" value="255" class="in" type="text"> 
+<input name="ip_2" size="3" value="255" class="in" type="text"> 
+<input name="ip_3" size="3" value="240" class="in" type="text"> 
+<input name="ip_4" size="3" value="0" class="in" type="text"> 
+resultado: 
+<input name="invert_1" size="3" readonly="readonly" type="text"> 
+<input name="invert_2" size="3" readonly="readonly" type="text"> 
+<input name="invert_3" size="3" readonly="readonly" type="text"> 
+<input name="invert_4" size="3" readonly="readonly" type="text"> 
+<input value=" calcular " onclick="calcIpInvert(this.form)" type="button">  
+<input value=" reset " onclick="resetform8(this.form)" type="button">
+          </form>
+<br><hr>
+
+<h3>Convertir mascara de red (bits)en Cantidad de Direcciones Usables</h3>
+
+          <form>
+Masc: /<input name="bits" size="2" value="27" class="in" type="text"> 
+<input value=" calcular " onclick="calcAmount(this.form)" type="button">  
+<input value=" reset " onclick="resetform7(this.form)" type="button">
+<br><br>
+resultado: 
+<br><br>
+Direc. usables:: <input name="numofaddr" size="10" readonly="readonly" type="text"> 
+Total de direc:: <input name="maxaddr" size="10" readonly="readonly" type="text"> 
+<br>Mascara en decimal con punto(IP):
+<input name="snm_1" size="3" readonly="readonly" type="text"> 
+<input name="snm_2" size="3" readonly="readonly" type="text"> 
+<input name="snm_3" size="3" readonly="readonly" type="text"> 
+<input name="snm_4" size="3" readonly="readonly" type="text"> 
+          </form>
+
+<br>
+<hr>
+
+<table cellspacing="10">
+<tbody><tr>
+<td>
+<h3>Convertir decimal a binario y hexadecimal </h3>
+          <form>
+Dec:<input name="num" size="11" class="in" type="text"> 
+<br>
+<input value=" calcular " onclick="convertnum_dec(this.form)" type="button">  
+<input value=" reset " onclick="resetform11(this.form)" type="button">
+<br>
+<br>
+resultado: 
+<br>
+<br>Bin:
+<input name="bin_1" size="32" readonly="readonly" type="text"> 
+<br>Hex:
+<input name="hex_1" size="8" readonly="readonly" type="text"> 
+          </form>
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+<h3>Convertir Binario a Decimal y Hexadecimal </h3>
+          <form>
+Bin:<input name="num" size="32" class="in" type="text"> 
+<br>
+<input value=" calcular " onclick="convertnum_bin(this.form)" type="button">  
+<input value=" reset " onclick="resetform10(this.form)" type="button">
+<br>
+<br>
+resultado: 
+<br>
+<br>Dec:
+<input name="dec_1" size="11" readonly="readonly" type="text"> 
+<br>Hex:
+<input name="hex_1" size="8" readonly="readonly" type="text"> 
+          </form>
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+
+<h3>Convertir Hexadecimal a Binario y Decimal </h3>
+          <form>
+Hex:<input name="num" size="8" class="in" type="text"> 
+<br>
+<input value=" calcular " onclick="convertnum_hex(this.form)" type="button">  
+<input value=" reset " onclick="resetform9(this.form)" type="button">
+<br>
+<br>
+resultado: 
+<br>
+<br>Dec:
+<input name="dec_1" size="11" readonly="readonly" type="text"> 
+<br>Bin:
+<input name="bin_1" size="32" readonly="readonly" type="text"> 
+          </form>
+</td>
+</tr></tbody></table>
+<br><hr>
+<h3>IP Multicast address ranges</h3>
+All multicast addresses can easily be recognized because they
+start with the bit pattern "1110".
+<br>
+<br>
+224.0.0.0 - 224.0.0.255 <i> Well-known multicast addresses, control channels</i>
+<br>
+224.0.1.0 - 238.255.255.255 <i> Globally-scoped (Internet-wide) multicast addresses</i>
+<br>
+239.0.0.0 - 239.255.255.255 <i> Local multicast addresses</i>
+<br>
+
+<h3>Special and private address ranges</h3>
+Private address ranges are not routed on the Internet and
+can be freely allocated in any private network. NAT (network
+address translation) is required when connecting such a network
+to the Internet.
+<br>
+<br>
+Private network addresses (RFC1597/RFC1918 addresses):
+<br>
+    10.0.0.0 - 10.255.255.255  <i>A 24-bit block, /8, class A network</i>
+<br>
+  172.16.0.0 - 172.31.255.255  <i>A 20-bit block, /12, set of 16 contiguous class B network numbers</i>
+<br>
+192.168.0.0 - 192.168.255.255  <i>A 16-bit block, /16, set of 255 contiguous 
+                               class C network numbers</i>
+<br>
+<br>
+Special addresses:
+<br>
+127.0.0.0 - 127.255.255.255 <i>Special address range for the
+localhost. You can normally not use those addresses for anything else.
+127.0.0.1 is generally assigned to the loopback device</i>
+<br>
+0.0.0.0  <i>Special host address commonly reserved for the default route </i>
+
+<br><hr>
+<h3>Overview of common subnets and masks</h3>
+<pre>
+Mask Hosts  Usable Netmask          Hex Mask
+/30  4      2      255.255.255.252  fffffffc  this is 1/64 of a Class C net
+/29  8      6      255.255.255.248  fffffff8  this is 1/32 of a Class C net
+/28  16     14     255.255.255.240  fffffff0  this is 1/16 of a Class C net
+/27  32     30     255.255.255.224  ffffffe0  this is 1/8 of a Class C net
+/26  64     62     255.255.255.192  ffffffc0  this is 1/4 of a Class C net
+/24  256    254    255.255.255.0    ffffff00  this is a Class C net
+/23  512    510    255.255.254.0    fffffe00  these are 2 Class C net
+/22  1024   1022   255.255.252.0    fffffc00  these are 4 Class C net
+/21  2048   2046   255.255.248.0    fffff800  these are 8 Class C net
+/20  4096   4094   255.255.240.0    fffff000  these are 16 Class C net
+/19  8192   8190   255.255.224.0    ffffe000  these are 32 Class C net
+/18  16384  16382  255.255.192.0    ffffc000  these are 64 Class C net
+/17  32768  32766  255.255.128.0    ffff8000  these are 128 Class C net
+/16  65536  65534  255.255.0.0      ffff0000  these are 256 Class C net = Class B net
+</pre>
+<br>
+    <p class="copy">
+This page is operting system independent. It only requires a
+javascript capable webbrowser. You can install it locally on
+your PC just by saving this html page.
+<br>
+<br></p>
+
+</body></html>
